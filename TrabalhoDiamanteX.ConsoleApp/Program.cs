@@ -11,24 +11,29 @@ namespace TrabalhoDiamanteX.ConsoleApp
 
             int numero = 0; 
 
-            do
+            while (true)
             {
-                Console.WriteLine("Forneça um número impar.");
-                Console.WriteLine();
-                numero = Convert.ToInt32(Console.ReadLine());
-
-                if (numero % 2 == 0)
+                do
                 {
+                    Console.WriteLine("Forneça um número impar.");
                     Console.WriteLine();
-                    Console.WriteLine("Número inválido! Por favor, digite um número ímpar.");
-                    Console.WriteLine();
-                }
+                    numero = Convert.ToInt32(Console.ReadLine());
 
-            } while (numero % 2 == 0);
+                    if (numero % 2 == 0)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Número inválido! Por favor, digite um número ímpar.");
+                        Console.WriteLine();
+                    }
 
-            DesenharDiamante(numero);
-            Console.ReadKey();
+                } while (numero % 2 == 0);
 
+                DesenharDiamante(numero);
+                
+                string opcaoContinuar = MenuContinuar();
+                
+            }
+            
         }
 
 
@@ -54,6 +59,16 @@ namespace TrabalhoDiamanteX.ConsoleApp
                 Console.Write(new string('X', xis));
                 Console.WriteLine();
             }
+        }
+
+        static string MenuContinuar()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Deseja continuar? (S/N) ");            
+            string opcaoContinuar = Console.ReadLine()!.ToUpper();
+            Console.WriteLine();
+
+            return opcaoContinuar;
         }
 
 
