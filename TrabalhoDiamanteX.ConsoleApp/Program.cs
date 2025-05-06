@@ -29,6 +29,22 @@ namespace TrabalhoDiamanteX.ConsoleApp
 
             } while (numero % 2 == 0);
 
+            
+            int tamanho = 1;
+
+            for (int i = 0; i < tamanho; i++)
+            {
+                int meio = tamanho / 2;
+                int distancia = Math.Abs(meio - i);
+                int xis = tamanho - (distancia * 2);
+                int espacos = distancia;
+
+
+                Console.Write(new string(' ', espacos));
+                Console.Write(new string('X', xis));
+                Console.WriteLine();
+            }
+
 
         }
     }
