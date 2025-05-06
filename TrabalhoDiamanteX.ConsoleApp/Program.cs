@@ -31,7 +31,9 @@ namespace TrabalhoDiamanteX.ConsoleApp
                 DesenharDiamante(numero);
                 
                 string opcaoContinuar = MenuContinuar();
-                
+                if (opcaoContinuar != "S")
+                    break;
+
             }
             
         }
