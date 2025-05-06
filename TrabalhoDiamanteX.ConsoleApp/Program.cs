@@ -14,16 +14,20 @@ namespace TrabalhoDiamanteX.ConsoleApp
             do
             {
                 Console.WriteLine("Forneça um número impar.");
+                Console.WriteLine();
                 numero = Convert.ToInt32(Console.ReadLine());
 
                 if (numero % 2 == 0)
                 {
+                    Console.WriteLine();
                     Console.WriteLine("Número inválido! Por favor, digite um número ímpar.");
+                    Console.WriteLine();
                 }
 
             } while (numero % 2 == 0);
 
             DesenharDiamante(numero);
+            Console.ReadKey();
 
         }
 
