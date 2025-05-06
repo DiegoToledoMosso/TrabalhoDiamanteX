@@ -1,4 +1,6 @@
-﻿namespace TrabalhoDiamanteX.ConsoleApp
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace TrabalhoDiamanteX.ConsoleApp
 {
     internal class Program
     {
@@ -13,13 +15,21 @@
         {
             Console.WriteLine("Diamante de X");
 
-            
+            int numero = 0;
 
-            
-            Console.WriteLine("Forneça um número impar.");
-            int numero = Convert.ToInt32(Console.ReadLine());
+            do
+            {
+                Console.WriteLine("Forneça um número impar.");
+                numero = Convert.ToInt32(Console.ReadLine());
 
-              
+                if (numero % 2 == 0)
+                {
+                    Console.WriteLine("Número inválido! Por favor, digite um número ímpar.");
+                }
+
+            } while (numero % 2 == 0);
+
+
         }
     }
 }
