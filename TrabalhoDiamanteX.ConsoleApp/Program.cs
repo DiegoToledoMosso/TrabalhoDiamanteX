@@ -13,7 +13,7 @@ namespace TrabalhoDiamanteX.ConsoleApp
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Diamante de X");
+            Menu();
 
             int numero = 0;
 
@@ -47,5 +47,15 @@ namespace TrabalhoDiamanteX.ConsoleApp
 
 
         }
+
+
+        static void Menu ()
+        {
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("Olá, Bem-vindo ao Diamante de X");
+            Console.WriteLine("---------------------------------");
+        }
+            
+
     }
 }
