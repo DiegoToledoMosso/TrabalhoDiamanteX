@@ -11,7 +11,15 @@
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Diamante de X");
+
+            
+
+            
+            Console.WriteLine("Forneça um número impar.");
+            int numero = Convert.ToInt32(Console.ReadLine());
+
+              
         }
     }
 }
