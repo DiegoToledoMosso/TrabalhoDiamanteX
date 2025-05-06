@@ -4,18 +4,12 @@ namespace TrabalhoDiamanteX.ConsoleApp
 {
     internal class Program
     {
-        /* Versão 1
-         * O programa deve solicitar ao usuário um número inteiro. x
-         * O número deve ser ímpar. Caso contrário, o programa deve informar que a entrada é inválida e solicitar um novo número. x
-         * O número de linhas e colunas deve ser igual ao número ímpar fornecido.
-         * A linha central do diamante deve conter o número máximo de Xs.
-         */
-
+        
         static void Main(string[] args)
         {
             Menu();
 
-            int numero = 0;
+            int numero = 0; 
 
             do
             {
@@ -29,22 +23,7 @@ namespace TrabalhoDiamanteX.ConsoleApp
 
             } while (numero % 2 == 0);
 
-            
-            int tamanho = 1;
-
-            for (int i = 0; i < tamanho; i++)
-            {
-                int meio = tamanho / 2;
-                int distancia = Math.Abs(meio - i);
-                int xis = tamanho - (distancia * 2);
-                int espacos = distancia;
-
-
-                Console.Write(new string(' ', espacos));
-                Console.Write(new string('X', xis));
-                Console.WriteLine();
-            }
-
+            DesenharDiamante(numero);
 
         }
 
@@ -55,7 +34,25 @@ namespace TrabalhoDiamanteX.ConsoleApp
             Console.WriteLine("Olá, Bem-vindo ao Diamante de X");
             Console.WriteLine("---------------------------------");
         }
-            
+
+        static void DesenharDiamante(int tamanho)
+        {
+            int meio = tamanho / 2;
+
+            for (int i = 0; i < tamanho; i++)
+            {
+                int distancia = Math.Abs(meio - i);
+                int xis = tamanho - (distancia * 2);
+                int espacos = distancia;
+
+
+                Console.Write(new string(' ', espacos));
+                Console.Write(new string('X', xis));
+                Console.WriteLine();
+            }
+        }
+
+
 
     }
 }
