@@ -1,13 +1,45 @@
-﻿namespace TrabalhoDiamanteX.ConsoleApp
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace TrabalhoDiamanteX.ConsoleApp
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Menu();
+
+            int numero = 0;
+
+            while (true)
+            {
+                do
+                {
+                    Console.WriteLine("Forneça um número impar.");
+                    Console.WriteLine();
+                    numero = Convert.ToInt32(Console.ReadLine());
+
+                    if (numero % 2 == 0)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Número inválido! Por favor, digite um número ímpar.");
+                        Console.WriteLine();
+                    }
+
+                } while (numero % 2 == 0);
+
+                DesenharDiamante(numero);
+
+                string opcaoContinuar = MenuContinuar();
+                if (opcaoContinuar != "S")
+                    break;
+
+            }
+
         }
 
-        static void Menu ()
+
+        static void Menu()
         {
             Console.WriteLine("---------------------------------");
             Console.WriteLine("Olá, Bem-vindo ao Diamante de X");
@@ -34,13 +66,12 @@
         static string MenuContinuar()
         {
             Console.WriteLine();
-            Console.WriteLine("Deseja continuar? (S/N) ");            
+            Console.WriteLine("Deseja continuar? (S/N) ");
             string opcaoContinuar = Console.ReadLine()!.ToUpper();
             Console.WriteLine();
 
             return opcaoContinuar;
         }
-
 
 
 
